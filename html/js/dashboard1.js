@@ -295,33 +295,10 @@ function buildTableWithData(location, customerLimit) {
     });
 
     dataTable = $("#sale-table").DataTable();
-
-    //////////////   Minimun Customsers Count   ////////////
-    var ele = $("#sale-table_length").parent();
-    var customer_filter_div = document.createElement("LABEL");
-
-    customer_filter_div.append("Min. Transactions");
-    customer_filter_div.className = ("pull-right")
-
-    var customer_filter = document.createElement("INPUT");
-    customer_filter.id = "customer-filter";
-    customer_filter.value = customerLimit;
-
-    customer_filter_div.append(customer_filter);
-    ele.append(customer_filter_div);
     
 
     /////////////  Location Select Filter   ///////////////
-    ele = $("#sale-table_filter").parent();
-    var sales_location_filter_div = document.createElement("LABEL");
-
-    sales_location_filter_div.append("Sales location");
-    sales_location_filter_div.className = ("pull-left")
-    
-    var sales_location_filter = document.createElement("select");
-    sales_location_filter.id = "sales-location-filter";
-
-    sales_location_filter.append(option);
+    $("#sales-location-filter").html('');
     for (var i = 0; i < salesLocationArray.length; i++) {
         var option = document.createElement("option");
         option.value = salesLocationArray[i];
@@ -329,21 +306,8 @@ function buildTableWithData(location, customerLimit) {
         if (option.value == location) {
             option.selected = "selected";
         }
-        sales_location_filter.append(option);
+        $("#sales-location-filter").append(option);
     }
-
-    sales_location_filter_div.append(sales_location_filter);
-    ele.append(sales_location_filter_div);
-
-
-    $("#customer-filter").change(function(e) {
-        buildTableWithData($("#sales-location-filter").val(), this.value);
-        drawChart();
-    });
-    $("#sales-location-filter").change(function(e) {
-        buildTableWithData(this.value, $("#customer-filter").val());
-        drawChart();
-    })
 } 
 
 
@@ -511,4 +475,15 @@ $(document).ready(function () {
      });
 
      getDataFromCSV();
+
+
+    $("#customer-filter").change(function(e) {
+        buildTableWithData($("#sales-location-filter").val(), this.value);
+        drawChart();
+    });
+
+    $("#sales-location-filter").change(function(e) {
+        buildTableWithData(this.value, $("#customer-filter").val());
+        drawChart();
+    })
  });

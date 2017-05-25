@@ -69,6 +69,19 @@
 	width: 170px;
 }
 
-#customer-filter {
-	width: 120px;
+.filters h5, .filters label {
+	color: white !important;
+}
+
+.filters {
+	margin-top: 50px;
+}
+
+.filters >div {
+	margin-top: 30px;
+}
+
+.filters input, .filters select {
+	width: 150px;
+	height: 30px;
 }
