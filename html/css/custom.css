@@ -1,0 +1,74 @@
+#page-wrapper {
+	margin-top: 40px !important;
+}
+
+.navbar-header {
+	height: 60px;
+}
+
+#main-table th.number {
+	width: 12%;
+}
+
+#main-table th:before {
+	content: "";
+}
+
+.top-filter {
+	display: inline-block;
+}
+
+.top-filter li {
+	padding: 5px 10px 0 50px;
+}
+
+.top-filter li label {
+	margin-right: 5px;
+}
+
+.chart-filter {
+	display: block;
+	list-style-type: none;
+}
+
+.chart-filter .y-axis, .chart-filter input {
+	display: block;
+	width: 159px;
+}
+
+.highcharts-credits {
+	display: none;
+}
+
+.validation-error {
+	border: 1px solid red;
+}
+
+.nav.navbar-top-links {
+	color: white;
+}
+
+.nav.navbar-top-links input, .nav.navbar-top-links select {
+	display: inline-block;
+	width: 200px;
+	padding: 2px 12px 2px 12px;
+    height: 30px;
+}
+
+#main-table select, #main-table input {
+	padding: 2px 12px 2px 12px;
+    height: 30px;
+    margin-left: 15px;
+}
+
+.white-box {
+	background: url(http://www.highcharts.com/samples/graphics/sand.png);
+}
+
+.top-left-part span .light-logo {
+	width: 170px;
+}
+
+#customer-filter {
+	width: 120px;
+}
